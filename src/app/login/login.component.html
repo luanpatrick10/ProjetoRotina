@@ -1,0 +1,23 @@
+<div class="container-pagina">
+    <div class="container-login">
+        <div class="container-titulo">
+            <h2>Login</h2>
+        </div>
+        <form>
+            <div class="formulario-login">
+                <mat-form-field class="botao-login">
+                    <mat-label>Login</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <div>
+                    <mat-form-field class="botao-login">
+                        <mat-label>Senha</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'">
+                    </mat-form-field>
+                </div>
+                <button mat-raised-button color="primary botao-login">Entrar</button>
+                <button mat-raised-button color="primary botao-login">Cadastrar</button>
+            </div>            
+        </form>
+    </div>
+</div>

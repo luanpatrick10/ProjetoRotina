@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-pagina{
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container-login{
+    border: 1px solid;
+    border-radius: 5%;        
+    width: 300px;
+    height: 400px;    
+}
+
+.container-titulo{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.container-login form{
+    margin-top: 50px 0px 0px 5px;    
+}
+
+.botao-login{
+    min-width: 100%;
+}
+
+.formulario-login{
+    padding: 10%;
+}
