@@ -9,15 +9,21 @@
                     <mat-label>Login</mat-label>
                     <input matInput>
                 </mat-form-field>
-                <div>
-                    <mat-form-field class="botao-login">
-                        <mat-label>Senha</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'">
-                    </mat-form-field>
+                <mat-form-field class="botao-login">
+                    <mat-label>Senha</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                </mat-form-field>
+                <div class="subopcoes">
+                    <div class="manter-conectado">
+                        <mat-checkbox class="example-margin">Manter conectado!</mat-checkbox>
+                    </div>
+                    <a class="esqueceu-senha">Esqueceu sua senha?</a>
                 </div>
-                <button mat-raised-button color="primary botao-login">Entrar</button>
-                <button mat-raised-button color="primary botao-login">Cadastrar</button>
-            </div>            
+                <button mat-raised-button color="primary botao-entrar">Entrar</button>
+                <div class="container-registrar">
+                    <span>Não possui login?&nbsp;&nbsp;<a class="esqueceu-senha"><b>Registre-se</b></a></span>
+                </div>
+            </div>
         </form>
     </div>
 </div>

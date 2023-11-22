@@ -1,38 +1,93 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.container-pagina{
+
+a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.container-pagina {
     min-width: 100vw;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    background: #00a2ff;
 }
 
-.container-login{
-    border: 1px solid;
-    border-radius: 5%;        
-    width: 300px;
-    height: 400px;    
+.container-login {    
+    border-radius: 10px;
+    box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
+                5px 5px 15px rgba(0,0,0,0.5);
+    width: 400px;
+    height: 450px;    
+    background:white;   
 }
 
-.container-titulo{
+.container-titulo {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
 }
-.container-login form{
-    margin-top: 50px 0px 0px 5px;    
+
+.container-login form {
+    margin-top: 50px 0px 0px 5px;
 }
 
-.botao-login{
+.botao-login {
     min-width: 100%;
 }
 
-.formulario-login{
-    padding: 10%;
+.botao-entrar {
+    margin-top: 10px;
+    min-width: 100%;
+    background-color:#00a2ff !important;
+}
+
+.formulario-login {
+    padding: 0 10%;
+    position: relative;
+}
+
+.container-botoes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.subopcoes {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    align-items: center;
+}
+
+.manter-conectado {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+
+.container-registrar {
+    margin-top: 20px;
+}
+h2 {
+    color: #00a2ff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.form .input label {
+    color: #868686;
+    font-size: 18px;
+}
+
+.form .input input{
+    color:white;
 }
