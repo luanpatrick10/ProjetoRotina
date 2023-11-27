@@ -7,11 +7,11 @@
             <div class="formulario-login">
                 <mat-form-field class="botao-login">
                     <mat-label>Login</mat-label>
-                    <input matInput>
-                </mat-form-field>
+                    <input [(ngModel)]="login.email" [value]="login.email" name="login.email"  matInput>
+                </mat-form-field>                
                 <mat-form-field class="botao-login">
                     <mat-label>Senha</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <input [(ngModel)]="login.senha" matInput name="login.senha" [type]="hide ? 'password' : 'text'">                    
                 </mat-form-field>
                 <div class="subopcoes">
                     <div class="manter-conectado">
@@ -19,7 +19,7 @@
                     </div>
                     <a class="esqueceu-senha">Esqueceu sua senha?</a>
                 </div>
-                <button mat-raised-button color="primary botao-entrar">Entrar</button>
+                <button type="button" mat-raised-button color="primary botao-entrar" (click)="logar()">Entrar</button>
                 <div class="container-registrar">
                     <span>Não possui login?&nbsp;&nbsp;<a class="esqueceu-senha"><b>Registre-se</b></a></span>
                 </div>
