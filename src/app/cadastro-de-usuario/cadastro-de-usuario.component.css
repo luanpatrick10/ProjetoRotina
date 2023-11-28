@@ -1,0 +1,35 @@
+.container-registrar {    
+    border-radius: 10px;
+    box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
+                5px 5px 15px rgba(0,0,0,0.5);
+    width: 500px;
+    height: 450px;    
+    background:white;   
+}
+
+.container-titulo {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.container-elementos-forms{
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-botao-registrar-se{
+    display: flex;
+    justify-content: center;
+    margin-top:10px;
+}
+
+.botao-registrar-se{    
+    min-width: 90%;
+}
+.container-logar-se{
+    margin-top:15px;
+    display: flex;
+    justify-content: center;
+}

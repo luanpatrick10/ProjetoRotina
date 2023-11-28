@@ -6,7 +6,7 @@
         <form>
             <div class="formulario-login">
                 <mat-form-field class="botao-login">
-                    <mat-label>Login</mat-label>
+                    <mat-label>E-mail</mat-label>
                     <input [(ngModel)]="login.email" [value]="login.email" name="login.email"  matInput>
                 </mat-form-field>                
                 <mat-form-field class="botao-login">
@@ -19,9 +19,9 @@
                     </div>
                     <a class="esqueceu-senha">Esqueceu sua senha?</a>
                 </div>
-                <button type="button" mat-raised-button color="primary botao-entrar" (click)="logar()">Entrar</button>
+                <button type="button" mat-raised-button color="primary botao-form botao-entrar" (click)="logar()">Entrar</button>
                 <div class="container-registrar">
-                    <span>Não possui login?&nbsp;&nbsp;<a class="esqueceu-senha"><b>Registre-se</b></a></span>
+                    <span>Não possui login?&nbsp;&nbsp;<a class="esqueceu-senha" [routerLink]="['/cadastro-de-usuario']"><b>Registre-se</b></a></span>
                 </div>
             </div>
         </form>

@@ -23,3 +23,7 @@ a {
     position: relative;
     background: #00a2ff;
 }
+
+.botao-form{
+    background-color:#00a2ff !important;
+}
