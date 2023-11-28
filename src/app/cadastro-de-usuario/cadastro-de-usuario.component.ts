@@ -18,6 +18,8 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { CadastroDeUsuarioService } from './cadastro-de-usuario.service';
+import { Usuario } from '../Interfaces/Usuario';
 
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -36,7 +38,26 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrl: './cadastro-de-usuario.component.css'
 })
 export class CadastroDeUsuarioComponent  {
+  constructor(private usuarioService:CadastroDeUsuarioService){
+
+  }
+
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   matcher = new MyErrorStateMatcher();
   hide = true;
+  usuario: Usuario = {
+    cpf: '',
+    nome: '',
+    email: '',
+    id: 0,
+    dataDeNascimento: '',
+    senha: '',
+    sexo: ''
+  };
+
+  public registrar() {
+    this.usuarioService.registrar(this.usuario).subscribe(
+      res => {console.log("Feito")}
+    )
+  }
 }

@@ -8,18 +8,18 @@
                 <div class="container-elementos-forms">
                     <mat-form-field>
                         <mat-label>CPF</mat-label>
-                        <input matInput>
+                        <input [(ngModel)]="usuario.cpf" [value]="usuario.cpf" name="usuario.cpf" matInput>
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Nome</mat-label>
-                        <input matInput>
+                        <input [(ngModel)]="usuario.nome" [value]="usuario.nome" name="usuario.nome" matInput>
                     </mat-form-field>
                 </div>
                 <div class="container-elementos-forms">
                     <mat-form-field class="example-full-width">
                         <mat-label>E-mail</mat-label>
-                        <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                               placeholder="Ex. pat@example.com">                        
+                        <input [(ngModel)]="usuario.email" [value]="usuario.email" name="usuario.email" type="email" 
+                            matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"placeholder="Ex. pat@example.com">                        
                         @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
                           <mat-error>Porfavor digite um e-mail válido</mat-error>
                         }
@@ -29,7 +29,7 @@
                       </mat-form-field>
                     <mat-form-field>
                         <mat-label>Data de nascimento</mat-label>
-                        <input matInput [matDatepicker]="picker">
+                        <input matInput [matDatepicker]="picker" [(ngModel)]="usuario.dataDeNascimento" [value]="usuario.dataDeNascimento" name="usuario.dataDeNascimento">
                         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field>
@@ -37,16 +37,16 @@
                 <div class="container-elementos-forms">
                     <mat-form-field>
                         <mat-label>Sexo</mat-label>
-                        <input matInput>
+                        <input matInput [(ngModel)]="usuario.sexo" [value]="usuario.sexo" name="usuario.sexo">
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Senha</mat-label>                        
-                        <input matInput  [type]="hide ? 'password' : 'text'">                    
+                        <input matInput  [type]="hide ? 'password' : 'text'" [(ngModel)]="usuario.senha" [value]="usuario.senha" name="usuario.senha">                    
                     </mat-form-field>
                 </div>
                 <div class="container-botao-registrar-se">
                     <button type="button" mat-raised-button
-                        color="primary botao-form botao-registrar-se">Registrar-se</button>
+                        color="primary botao-form botao-registrar-se" (click)="registrar()">Registrar-se</button>
                 </div>
                 <div class="container-logar-se">
                     <span>Já possui login?&nbsp;&nbsp;<a class="esqueceu-senha"

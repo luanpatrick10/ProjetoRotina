@@ -8,10 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LoginService } from './login.service';
 import { Login } from '../Interfaces/Login';
-import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
