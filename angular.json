@@ -61,7 +61,7 @@
               "buildTarget": "ProjetoRotina:build:production"
             },
             "development": {
-              "buildTarget": "ProjetoRotina:build:development"
+              "buildTarget": "ProjetoRotina:build:development"              
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "ProjetoRotina:build"
+            "buildTarget": "ProjetoRotina:build"            
           }
         },
         "test": {

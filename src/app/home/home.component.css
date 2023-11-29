@@ -1,0 +1,30 @@
+.container-pagina-home{
+    display: flex;    
+}
+.container-menu-lateral{    
+    width: 20%;
+    height: 100vh;
+    background-color:#00a2ff ;
+    position: relative;
+    color: white;
+    display: inline-block;
+    padding:20px;
+}
+.example-container {
+    width:100vw;
+    height: 100vh;
+    border: 1px solid rgba(0, 0, 0, 0.5);    
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;    
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+    background-color:#00a2ff ;
+    color: white;
+  }
