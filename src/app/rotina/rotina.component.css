@@ -1,0 +1,16 @@
+.container-tab-itens{
+    display: flex;
+    flex-direction: column;
+}
+
+.rotina-titulo{
+    text-align: center;
+}
+.container-botao{
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+}
+.container-botao > button{
+    width: 300px;
+}

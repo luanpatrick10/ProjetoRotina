@@ -1,0 +1,30 @@
+<h1 class="rotina-titulo">Rotina</h1>
+<mat-tab-group>    
+    <mat-tab label="Cadastro de Rotina">
+        <form>
+            <div class="container-tab-itens">
+                <mat-form-field>
+                    <mat-label>Nome da rotina</mat-label>
+                    <input matInput>
+                </mat-form-field>                
+                <mat-form-field>
+                <mat-label>Dias da semana</mat-label>
+                    <mat-select multiple>
+                        <mat-option [value]="''">Domingo</mat-option>
+                        <mat-option [value]="''">Segunda-Feira</mat-option>
+                        <mat-option [value]="''">Terça-Feira</mat-option>
+                        <mat-option [value]="''">Quarta-Feira</mat-option>
+                        <mat-option [value]="''">Quinta-Feira</mat-option>
+                        <mat-option [value]="''">Sexta-Feira</mat-option>
+                        <mat-option [value]="''">Sábado</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="container-botao">
+                <button type="button" mat-raised-button color="primary">Cadastrar</button>
+            </div>            
+        </form>
+    </mat-tab>
+    <mat-tab label="Dia Dia"></mat-tab>
+    <mat-tab label="Relatórios"></mat-tab>
+</mat-tab-group>

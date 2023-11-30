@@ -1,0 +1,1 @@
+export const localBaseApi:string = "http://localhost:5092";
