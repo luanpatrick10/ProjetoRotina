@@ -57,7 +57,8 @@ export class CadastroDeUsuarioComponent  {
 
   public registrar() {
     this.usuarioService.registrar(this.usuario).subscribe(
-      res => {console.log("Feito")}
+      res => {console.log("Feito")},
+      error => {console.log("Erro")}
     )
   }
 }
