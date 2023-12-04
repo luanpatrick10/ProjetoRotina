@@ -7,11 +7,11 @@ import { RotinaComponent } from './rotina/rotina.component';
 export const routes: Routes = [
     { path: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
+    { path: 'cadastro-de-usuario', component: CadastroDeUsuarioComponent },
     {
         path: 'admin',
         component:HomeComponent,
-        children: [            
-            { path: 'cadastro-de-usuario', component: CadastroDeUsuarioComponent },
+        children: [                        
             { path: 'rotina', component: RotinaComponent }
         ]
     }
