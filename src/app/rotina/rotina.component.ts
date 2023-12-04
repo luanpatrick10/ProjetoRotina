@@ -53,7 +53,7 @@ export class RotinaComponent {
 
     public excluirRotina(id:number): void{
         
-        console.log("Item excluido com id" + id)
+        console.log("Item excluido com idd" + id)
     }
     public concluirRotina(id:number):void{
         console.log("Item concluido com id: " + id)
