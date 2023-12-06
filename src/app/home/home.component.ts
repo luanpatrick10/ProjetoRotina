@@ -7,7 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import {RouterModule } from '@angular/router';
+import {Router, RouterModule } from '@angular/router';
+import { ControladorDeSessoes } from '../utils/controlador-de-sessoes';
 
 
 
@@ -20,11 +21,16 @@ import {RouterModule } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder,private router:Router) { }
   showFiller = false;
   options = this._formBuilder.group({
     bottom: 0,
     fixed: false,
     top: 0,
   });
+
+  sair(){
+    ControladorDeSessoes.limparDadosLocaisUsuario()
+    this.router.navigate(['/login'])
+  }
 }

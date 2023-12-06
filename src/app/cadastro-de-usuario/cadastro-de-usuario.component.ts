@@ -8,7 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {
   FormControl,
   FormGroupDirective,
@@ -38,7 +38,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrl: './cadastro-de-usuario.component.css'
 })
 export class CadastroDeUsuarioComponent  {
-  constructor(private usuarioService:CadastroDeUsuarioService){
+  constructor(private usuarioService:CadastroDeUsuarioService,private router:Router){
 
   }
 
@@ -57,7 +57,7 @@ export class CadastroDeUsuarioComponent  {
 
   public registrar() {
     this.usuarioService.registrar(this.usuario).subscribe(
-      res => {console.log("Feito")},
+      res => {this.router.navigate(['/login'])},
       error => {console.log("Erro")}
     )
   }

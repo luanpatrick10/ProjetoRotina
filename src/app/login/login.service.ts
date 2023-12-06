@@ -10,8 +10,7 @@ export class LoginService {
  localBaseAPI: string = "http://localhost:5092"
 
  private CriarUrlLogar(email: string, senha:string) : string {
-  let local:string = `${this.localBaseAPI}/api/Usuario/logar/${email}/${senha}`
-  console.log(local)
+  let local:string = `${this.localBaseAPI}/api/Usuario/logar/${email}/${senha}`  
   return local
  } 
 

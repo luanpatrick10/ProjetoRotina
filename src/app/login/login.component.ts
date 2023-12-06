@@ -11,6 +11,7 @@ import { Login } from '../Interfaces/Login';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { ControladorDeSessoes } from '../utils/controlador-de-sessoes';
 
 
 
@@ -18,7 +19,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, MatSlideToggleModule, MatIconModule, MatButtonModule, MatInputModule, MatFormFieldModule
-    , MatCheckboxModule, FormsModule, ReactiveFormsModule,RouterModule],
+    , MatCheckboxModule, FormsModule, ReactiveFormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -32,10 +33,15 @@ export class LoginComponent {
   };
   public logar() {
     this.service.logar(this.login.email, this.login.senha).subscribe((resposta) => {
-      if (resposta)
-        this.router.navigate(['home'])
-      else
+      if (resposta) {
+        console.log("Senha correta")
+        console.log(resposta)
+        ControladorDeSessoes.salvarUsuario(resposta)
+        this.router.navigate(['admin'])
+      }
+      else {
         console.log("E-mail ou senha errada.")
+      }
     })
   };
 }

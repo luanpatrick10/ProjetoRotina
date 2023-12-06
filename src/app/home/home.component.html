@@ -1,16 +1,3 @@
-<!-- <div class="container-pagina-home">
-    <div class="container-menu-lateral">                
-        <h4>Usuário -> Nome do usuário</h4>
-        <ul>
-            <li>Cadastro</li>
-            <li>Alterar senha</li>
-            <li>Sair</li>
-        </ul>
-    </div>
-    <div class="container-conteudo-main">        
-        Página inicial
-    </div>
-</div> -->
 <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode="side" opened class="example-sidenav" [fixedInViewport]="options.value.fixed"
         [fixedTopGap]="options.value.top" [fixedBottomGap]="options.value.bottom">
@@ -20,14 +7,10 @@
                 <mat-list>                                
                     <mat-list-item>
                         <a [routerLink]="['/admin/rotina']" class="sidebar-item">Rotina</a>
-                    </mat-list-item>
+                    </mat-list-item>                                        
                     <mat-divider></mat-divider>
                     <mat-list-item>
-                        <a class="sidebar-item">Alterar senha</a>
-                    </mat-list-item>                                
-                    <mat-divider></mat-divider>
-                    <mat-list-item>
-                        <a class="sidebar-item">Sair</a>
+                        <a class="sidebar-item" (click)="sair()">Sair</a>
                     </mat-list-item>                                                
                     <mat-divider></mat-divider>
                 </mat-list>

@@ -11,6 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { Rotina, RotinaDTO } from '../Interfaces/Rotina';
 import { RotinaService } from './rotina.service';
 import { MatTableModule } from '@angular/material/table';
+import { ControladorDeSessoes } from '../utils/controlador-de-sessoes';
 
 
 
@@ -24,23 +25,21 @@ import { MatTableModule } from '@angular/material/table';
 })
 export class RotinaComponent {
     constructor(private rotinaService: RotinaService) {
-        rotinaService.obterTodos().subscribe((valor) =>
-            this.rotinaDeItens = valor
-        );
+        this.rotinaService.obterTodos().subscribe((resposta) => this.rotinaDeItens = resposta)
     }
     rotina: Rotina = {
         diasDaRotina: [],
         nomeDaRotina: ''
     }
     rotinaDeItens: Array<RotinaDTO> = new Array<RotinaDTO>();
-    displayedColumns: string[] = ['Nome da rotina','acoes'];
+    displayedColumns: string[] = ['Nome da rotina', 'acoes'];
 
     public criar() {
         this.rotina.diasDaRotina = this.rotina.diasDaRotina.toString()
         this.rotinaService.criarRotina(this.rotina).subscribe(
             sucesso => {
-                this.limparRotina()
-                console.log("Rotina criada")
+                this.limparRotina()                
+                this.rotinaService.obterTodos().subscribe((resposta) => this.rotinaDeItens = resposta)
             },
             error => {
                 console.log("Erro ao criar rotina")
@@ -49,13 +48,19 @@ export class RotinaComponent {
     }
 
     public obterRotinaDoDia(): void {
+        let id: number = ControladorDeSessoes.obterUsuario().idUsuario
+        this.rotinaService.obterRotinaDoUsuario(id).subscribe((valor) =>
+            this.rotinaDeItens = valor
+        );
     }
 
-    public excluirRotina(id:number): void{
-        
-        console.log("Item excluido com idd" + id)
+    public excluirRotina(id: number): void {
+        this.rotinaService.removerRotina(id).subscribe((valor) => {
+            this.limparRotina()
+            this.rotinaService.obterTodos().subscribe((resposta) => this.rotinaDeItens = resposta)
+        })
     }
-    public concluirRotina(id:number):void{
+    public concluirRotina(id: number): void {
         console.log("Item concluido com id: " + id)
     }
 

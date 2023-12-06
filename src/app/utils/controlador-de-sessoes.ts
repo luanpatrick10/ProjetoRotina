@@ -1,29 +1,17 @@
-export class controladorDeSessoes {    
+export class ControladorDeSessoes {
 
-    // public obterUsuario(): string | null {
-    //     // let resultado = localStorage.getItem('devio.user');
-    //     // return JSON.parse(resultado);
-    // }
-
-    public salvarDadosLocaisUsuario(response: any) {
-        this.salvarTokenUsuario(response.accessToken);
-        this.salvarUsuario(response.userToken);
+    public static obterUsuario(): any {        
+        let objeto = localStorage.getItem('projetoRotinaUsuario')
+        if(typeof objeto === 'string')
+            return JSON.parse(objeto);
     }
-
-    public limparDadosLocaisUsuario() {
-        localStorage.removeItem('devio.token');
-        localStorage.removeItem('devio.user');
+    public static salvarDadosLocaisUsuario(loginDTO: any) {        
+        this.salvarUsuario(loginDTO);
     }
-
-    public obterTokenUsuario(): string | null {
-        return localStorage.getItem('devio.token');
-    }
-
-    public salvarTokenUsuario(token: string) {
-        localStorage.setItem('devio.token', token);
-    }
-
-    public salvarUsuario(user: string) {
-        localStorage.setItem('devio.user', JSON.stringify(user));
+    public static limparDadosLocaisUsuario() {
+        localStorage.removeItem('projetoRotinaUsuario');        
+    }    
+    public static salvarUsuario(loginDTO: any) {
+        localStorage.setItem('projetoRotinaUsuario', JSON.stringify(loginDTO));
     }
 }
